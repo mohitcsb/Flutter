@@ -32,8 +32,10 @@ class Ecom extends StatelessWidget {
                   style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold ),
                 ),
                 Text(
-                  'View all',
+                  'View all by suzon',
                   style: TextStyle(fontSize: 10, ),
+
+
                 ),
               ],
 
