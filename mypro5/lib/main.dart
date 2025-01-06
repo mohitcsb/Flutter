@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mypro5/designApage.dart';
 import 'package:mypro5/ecom.dart';
 import 'package:mypro5/fourth.dart';
+import 'package:mypro5/login.dart';
 import 'package:mypro5/page5.dart';
 import 'package:mypro5/page6.dart';
 import 'package:mypro5/second%20page.dart';
@@ -32,6 +34,8 @@ class _MyAppState extends State<MyApp> {
         "six": (context)=> Page6(),
         "ecom": (context)=> Ecom(),
         "monir": (context)=> SportsStoreHomePage(),
+        "login": (context)=> Login(),
+        "designapage": (context)=> Designapage(),
       },
       home: Multi(),
     );
@@ -120,6 +124,12 @@ class _MultiState extends State<Multi> {
               ElevatedButton(onPressed: (){
                 Navigator.pushNamed(context, "monir");
               }, child: Text("Go Monir")),
+              ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, "login");
+              }, child: Text("Login")),
+              ElevatedButton(onPressed: (){
+                Navigator.pushNamed(context, "designapage");
+              }, child: Text("Go DesignAPage")),
             ],
         
           ),
