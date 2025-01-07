@@ -1,4 +1,6 @@
+import 'package:device_preview_plus/device_preview_plus.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mypro5/designApage.dart';
 import 'package:mypro5/ecom.dart';
@@ -10,9 +12,17 @@ import 'package:mypro5/second%20page.dart';
 import 'package:mypro5/sportsStoreHomePage.dart';
 import 'package:mypro5/third.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(
+
+  // without device preview **************
+  //  runApp(MyApp());
+  // **********
+
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -25,6 +35,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      //1st three lines for device preview ******************
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+      // ***************
+
       routes: {
         "second": (context)=> CalculationScreen(),
         "home": (context)=> Multi(),
